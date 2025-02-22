@@ -5,6 +5,7 @@ import instagram_icon from '../../assets/instagram_icon.png'
 import twitter_icon from '../../assets/twitter_icon.png'
 import youtube_icon from '../../assets/youtube_icon.png'
 
+
 const Footer = () => {
   return (
     <div className='footer'>
