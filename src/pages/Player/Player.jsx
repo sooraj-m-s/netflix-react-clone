@@ -18,7 +18,8 @@ const Player = () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZGQyNjM4NDM5MWM0NGM2YjY0Njg5MTQxOWUzZDI3NiIsIm5iZiI6MTc0MDE1MDM5MC45ODgsInN1YiI6IjY3Yjg5Njc2NzQzNDIwMGMyODIyOWQ5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5WDBK7rCT1BxG_kp61p_oOtpaym2_mvPJTSa3LbFeWc'
+      // Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZGQyNjM4NDM5MWM0NGM2YjY0Njg5MTQxOWUzZDI3NiIsIm5iZiI6MTc0MDE1MDM5MC45ODgsInN1YiI6IjY3Yjg5Njc2NzQzNDIwMGMyODIyOWQ5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5WDBK7rCT1BxG_kp61p_oOtpaym2_mvPJTSa3LbFeWc'
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`
     }
   };
 
@@ -31,7 +32,7 @@ const Player = () => {
   
   return (
     <div className='player'>
-      <img src={back_arrow_icon} alt="" onClick={()=>{navigate(-1)}}/>
+      <img src={back_arrow_icon} alt="" onClick={()=>{navigate(-2)}}/>
       <iframe width='90%' height='90%' src={`https://www.youtube.com/embed/${apiData.key}`}
       title='trailer' frameBorder='0' allowFullScreen></iframe>
       <div className="player-info">
