@@ -13,10 +13,17 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
+
+const formatErrorMessage = (errorCode)=>{
+    return errorCode
+        .split('/')[1]
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+};
 
 const signup = async (name, email, password)=>{
     try {
@@ -30,7 +37,7 @@ const signup = async (name, email, password)=>{
         })
     } catch (error) {
         console.log(error);
-        toast.error(error.code.split('/')[1].split('-').join(' '))
+        toast.error(formatErrorMessage(error.code));
     }
 }
 
@@ -39,7 +46,7 @@ const login = async (email, password)=>{
         await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
         console.log(error);
-        toast.error(error.code.split('/')[1].split('-').join(' '))
+        toast.error(formatErrorMessage(error.code));
     }
 }
 

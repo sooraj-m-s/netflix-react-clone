@@ -1,0 +1,20 @@
+.Toastify__toast-container {
+font-family: 'Helvetica Neue', sans-serif;
+}
+.Toastify__toast {
+background: #141414;
+color: #ffffff;
+border: 1px solid #e50914;
+font-size: 16px;
+}
+.Toastify__progress-bar {
+background: #e50914;
+}
+.Toastify__toast--error {
+background: #141414;
+border-left: 5px solid #e50914;
+}
+.Toastify__toast--success {
+background: #141414;
+border-left: 5px solid #e50914;
+}
